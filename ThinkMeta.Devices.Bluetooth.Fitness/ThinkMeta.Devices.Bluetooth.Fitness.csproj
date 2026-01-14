@@ -1,0 +1,9 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>net10.0-windows10.0.19041.0</TargetFramework>
+        <NoWarn>$(NoWarn);CA1416</NoWarn>
+    </PropertyGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\ThinkMeta.Devices.Bluetooth.Core\ThinkMeta.Devices.Bluetooth.Core.csproj" />
+    </ItemGroup>
+</Project>
