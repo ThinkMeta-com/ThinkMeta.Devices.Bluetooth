@@ -1,10 +1,10 @@
 # ThinkMeta.Devices.Bluetooth
 
-[![NuGet Package](https://img.shields.io/nuget/v/ThinkMeta.Devices.Bluetooth.Core)](https://www.nuget.org/packages/ThinkMeta.Devices.Bluetooth.Core)
+[![NuGet Package](https://img.shields.io/nuget/v/ThinkMeta.Devices.Bluetooth.Core)](https://www.nuget.org/packages/ThinkMeta.Devices.Bluetooth.Core) ThinkMeta.Devices.Bluetooth.Core
 
-[![NuGet Package](https://img.shields.io/nuget/v/ThinkMeta.Devices.Bluetooth.Fitness)](https://www.nuget.org/packages/ThinkMeta.Devices.Bluetooth.Fitness)
+[![NuGet Package](https://img.shields.io/nuget/v/ThinkMeta.Devices.Bluetooth.Fitness)](https://www.nuget.org/packages/ThinkMeta.Devices.Bluetooth.Fitness) ThinkMeta.Devices.Bluetooth.Fitness
 
-[![NuGet Package](https://img.shields.io/nuget/v/ThinkMeta.Devices.Bluetooth.HeartRate)](https://www.nuget.org/packages/ThinkMeta.Devices.Bluetooth.HeartRate)
+[![NuGet Package](https://img.shields.io/nuget/v/ThinkMeta.Devices.Bluetooth.HeartRate)](https://www.nuget.org/packages/ThinkMeta.Devices.Bluetooth.HeartRate) ThinkMeta.Devices.Bluetooth.HeartRate
 
 ThinkMeta.Devices.Bluetooth is a .NET library for discovering, connecting to, and interacting with Bluetooth fitness and heart rate devices. It provides high-level APIs for scanning, connecting, and controlling devices such as treadmills (FTMS) and heart rate monitors.
 
