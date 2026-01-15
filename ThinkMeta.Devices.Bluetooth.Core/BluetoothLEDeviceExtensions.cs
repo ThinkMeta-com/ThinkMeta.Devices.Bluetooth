@@ -1,4 +1,5 @@
-﻿using Windows.Devices.Bluetooth.GenericAttributeProfile;
+﻿using Windows.Devices.Bluetooth;
+using Windows.Devices.Bluetooth.GenericAttributeProfile;
 using Windows.Storage.Streams;
 
 namespace ThinkMeta.Devices.Bluetooth.Core;
@@ -13,7 +14,7 @@ public static class BluetoothLEDeviceExtensions
     /// </summary>
     /// <param name="device">The Bluetooth LE device.</param>
     /// <returns>A <see cref="DeviceInformation"/> instance with available information.</returns>
-    public static async Task<DeviceInformation> GetDeviceInformationAsync(this Windows.Devices.Bluetooth.BluetoothLEDevice device)
+    public static async Task<DeviceInformation> GetDeviceInformationAsync(this BluetoothLEDevice device)
     {
         var info = new DeviceInformation();
         var servicesResult = await device.GetGattServicesForUuidAsync(GenericBluetoothGuids.DeviceInformationServiceUuid);

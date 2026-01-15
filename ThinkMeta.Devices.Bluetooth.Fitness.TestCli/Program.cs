@@ -49,7 +49,45 @@ internal static class Program
             treadmill = await FitnessDevice.ConnectAsync(selectedDevice.BluetoothAddress);
             treadmill.ConnectionStatusChanged += connected => Console.WriteLine(connected ? "Connected." : "Disconnected.");
             treadmill.TreadmillDataChanged += (sender, data) => {
-                Console.WriteLine($"Treadmill Data: Speed={data.InstantaneousSpeed}, Distance={data.TotalDistance}, Incline={data.Inclination}, HR={data.HeartRate}, Power={data.PowerOutput}");
+                var parts = new List<string>();
+                if (data.InstantaneousSpeed.HasValue)
+                    parts.Add($"Speed={data.InstantaneousSpeed}");
+                if (data.AverageSpeed.HasValue)
+                    parts.Add($"AvgSpeed={data.AverageSpeed}");
+                if (data.TotalDistance.HasValue)
+                    parts.Add($"Distance={data.TotalDistance}");
+                if (data.Inclination.HasValue)
+                    parts.Add($"Incline={data.Inclination}");
+                if (data.RampAngle.HasValue)
+                    parts.Add($"RampAngle={data.RampAngle}");
+                if (data.PositiveElevationGain.HasValue)
+                    parts.Add($"PosElevGain={data.PositiveElevationGain}");
+                if (data.NegativeElevationGain.HasValue)
+                    parts.Add($"NegElevGain={data.NegativeElevationGain}");
+                if (data.InstantaneousPace.HasValue)
+                    parts.Add($"Pace={data.InstantaneousPace}");
+                if (data.AveragePace.HasValue)
+                    parts.Add($"AvgPace={data.AveragePace}");
+                if (data.TotalEnergy.HasValue)
+                    parts.Add($"TotalEnergy={data.TotalEnergy}");
+                if (data.EnergyPerHour.HasValue)
+                    parts.Add($"Energy/hr={data.EnergyPerHour}");
+                if (data.EnergyPerMinute.HasValue)
+                    parts.Add($"Energy/min={data.EnergyPerMinute}");
+                if (data.HeartRate.HasValue)
+                    parts.Add($"HR={data.HeartRate}");
+                if (data.MetabolicEquivalent.HasValue)
+                    parts.Add($"MET={data.MetabolicEquivalent}");
+                if (data.ElapsedTime.HasValue)
+                    parts.Add($"Elapsed={data.ElapsedTime}");
+                if (data.RemainingTime.HasValue)
+                    parts.Add($"Remaining={data.RemainingTime}");
+                if (data.ForceOnBelt.HasValue)
+                    parts.Add($"Force={data.ForceOnBelt}");
+                if (data.PowerOutput.HasValue)
+                    parts.Add($"Power={data.PowerOutput}");
+                if (parts.Count > 0)
+                    Console.WriteLine($"Treadmill Data: {string.Join(", ", parts)}");
             };
             Console.WriteLine("Connected. Ready for treadmill control menu.");
 

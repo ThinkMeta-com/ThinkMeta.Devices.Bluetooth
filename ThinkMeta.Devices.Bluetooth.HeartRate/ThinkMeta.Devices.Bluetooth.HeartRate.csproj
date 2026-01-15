@@ -1,9 +1,17 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <TargetFramework>net10.0-windows10.0.19041.0</TargetFramework>
-        <NoWarn>$(NoWarn);CA1416</NoWarn>
+        <PackageId>ThinkMeta.Devices.Bluetooth.HeartRate</PackageId>
+
+        <Title>Bluetooth heart rate monitor library</Title>
+        <Description>Classes for scanning and using Bluetooth heart rate monitors.</Description>
+        <PackageReleaseNotes>Initial release of the Bluetooth heart rate monitor library.</PackageReleaseNotes>
     </PropertyGroup>
+
     <ItemGroup>
-      <ProjectReference Include="..\ThinkMeta.Devices.Bluetooth.Core\ThinkMeta.Devices.Bluetooth.Core.csproj" />
+        <None Include="$(SolutionDir)README.md" Pack="true" PackagePath="\" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\ThinkMeta.Devices.Bluetooth.Core\ThinkMeta.Devices.Bluetooth.Core.csproj" />
     </ItemGroup>
 </Project>

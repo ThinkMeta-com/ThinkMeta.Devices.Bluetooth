@@ -1,4 +1,9 @@
 <Solution>
+  <Folder Name="/Solution Files/">
+    <File Path="LICENSE" />
+    <File Path="README.md" />
+    <File Path="SolutionFiles/ThinkMeta.Devices.Bluetooth.Net.props" />
+  </Folder>
   <Folder Name="/ThinkMeta.SolutionFiles/">
     <File Path="ThinkMeta.SolutionFiles/.clang-format" />
     <File Path="ThinkMeta.SolutionFiles/.editorconfig" />

@@ -47,6 +47,7 @@ public class FitnessDeviceScanner : DeviceScanner
             if ((flags & 0b00000001) == 0)
                 return FitnessMachineTypes.None;
 
+            // some devices send the type in big-endian format which is wrong according to the spec
             return data[3] == 0 ? (FitnessMachineTypes)data[4] : (FitnessMachineTypes)(data[4] << 8 | data[3]);
         }
 

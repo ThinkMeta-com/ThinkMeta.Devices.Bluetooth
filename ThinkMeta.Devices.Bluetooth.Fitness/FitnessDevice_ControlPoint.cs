@@ -1,4 +1,7 @@
-﻿namespace ThinkMeta.Devices.Bluetooth.Fitness;
+﻿using Windows.Devices.Bluetooth.GenericAttributeProfile;
+using Windows.Storage.Streams;
+
+namespace ThinkMeta.Devices.Bluetooth.Fitness;
 
 /// <summary>
 /// Spin down control types for FTMS Spin Down Control Point procedure.
@@ -222,13 +225,13 @@ public sealed partial class FitnessDevice
         var characteristic = _characteristics.FirstOrDefault(c => c.Uuid == FitnessDeviceGuids.FitnessMachineControlPointCharacteristicUuid)
             ?? throw new InvalidOperationException("FTMS Control Point characteristic not found.");
 
-        var writer = new Windows.Storage.Streams.DataWriter { ByteOrder = Windows.Storage.Streams.ByteOrder.LittleEndian };
+        var writer = new DataWriter { ByteOrder = ByteOrder.LittleEndian };
         writer.WriteBytes(payload);
         var buffer = writer.DetachBuffer();
         var status = await characteristic.WriteValueAsync(
             buffer,
-            Windows.Devices.Bluetooth.GenericAttributeProfile.GattWriteOption.WriteWithResponse);
-        if (status != Windows.Devices.Bluetooth.GenericAttributeProfile.GattCommunicationStatus.Success)
+            GattWriteOption.WriteWithResponse);
+        if (status != GattCommunicationStatus.Success)
             throw new InvalidOperationException($"Failed to write to FTMS Control Point: {status}");
     }
 }
