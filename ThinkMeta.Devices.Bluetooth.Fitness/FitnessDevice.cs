@@ -19,7 +19,7 @@ public sealed partial class FitnessDevice : IDisposable
     public event Action<bool>? ConnectionStatusChanged;
 
     private readonly BluetoothLEDevice _bluetoothLeDevice;
-    private IReadOnlyList<GattCharacteristic> _characteristics = null!;
+    private IReadOnlyList<GattCharacteristic> _characteristics = default!;
 
     private FitnessDevice(BluetoothLEDevice device)
     {
@@ -87,9 +87,7 @@ public sealed partial class FitnessDevice : IDisposable
     {
         BluetoothLEDevice? bluetoothLeDevice = null;
         try {
-            bluetoothLeDevice = await BluetoothLEDevice.FromBluetoothAddressAsync(bluetoothAddress);
-            if (bluetoothLeDevice is null)
-                throw new DeviceConnectionException("Failed to connect to device.");
+            bluetoothLeDevice = await BluetoothLEDevice.FromBluetoothAddressAsync(bluetoothAddress) ?? throw new DeviceConnectionException("Failed to connect to device.");
 
             var device = new FitnessDevice(bluetoothLeDevice);
             await device.SetupAsync();
