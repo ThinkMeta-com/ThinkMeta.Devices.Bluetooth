@@ -1,8 +1,0 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-    <PropertyGroup>
-        <OutputType>Exe</OutputType>
-    </PropertyGroup>
-    <ItemGroup>
-        <ProjectReference Include="..\ThinkMeta.Devices.Bluetooth.Fitness\ThinkMeta.Devices.Bluetooth.Fitness.csproj" />
-    </ItemGroup>
-</Project>

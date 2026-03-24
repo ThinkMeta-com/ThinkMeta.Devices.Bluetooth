@@ -1,0 +1,16 @@
+<Project>
+    <!-- Exclude auto-generated source files from code analysis -->
+    <Target Name="_WriteGeneratedCodeEditorConfig" BeforeTargets="CoreCompile">
+        <WriteLinesToFile File="$(IntermediateOutputPath).editorconfig"
+                         Lines="[*.cs]%0Agenerated_code = true"
+                         Overwrite="true" />
+    </Target>
+
+    <!--
+        UsingMicrosoftMauiSdk is set by Microsoft.Maui.Sdk.targets and available
+        at target execution time. Use it for MAUI-specific build behavior.
+    -->
+    <Target Name="_ValidateMauiSdk" BeforeTargets="CoreCompile" Condition="'$(TM_IsMaui)' == 'true' AND '$(UsingMicrosoftMauiSdk)' != 'true'">
+        <Warning Text="Project '$(MSBuildProjectName)' is detected as MAUI but UsingMicrosoftMauiSdk is not set. Ensure the MAUI workload is installed." />
+    </Target>
+</Project>

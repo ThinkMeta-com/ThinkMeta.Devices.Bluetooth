@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <PackageId>ThinkMeta.Devices.Bluetooth.Core</PackageId>
+
+        <Title>Bluetooth core library (Shared)</Title>
+        <Description>Shared core classes for Bluetooth fitness devices.</Description>
+        <PackageReleaseNotes>Added AdvertisementInfoBase and DeviceScannerBase shared abstract base classes for cross-platform reuse.</PackageReleaseNotes>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="$(SolutionDir)README.md" Pack="true" PackagePath="\" />
+    </ItemGroup>
+</Project>

@@ -1,6 +1,33 @@
 <Project>
+    <!--
+        Detect project type by naming convention:
+        - .Windows suffix → Windows-only (net10.0-windows)
+        - .Maui suffix → MAUI multi-target
+        - .TestCli suffix → Windows-only (net10.0-windows)
+        - No suffix → Shared (net10.0, set by ThinkMeta.Net.Build.props default)
+        The MAUI SDK also sets UsingMicrosoftMauiSdk=true in its targets phase,
+        which is available in <Target Condition> blocks for execution-time decisions.
+    -->
     <PropertyGroup>
+        <TM_IsMaui Condition="$(MSBuildProjectName.EndsWith('.Maui'))">true</TM_IsMaui>
+        <TM_IsMaui Condition="'$(TM_IsMaui)' != 'true' AND '$(UseMaui)' == 'true'">true</TM_IsMaui>
+        <TM_IsWindows Condition="$(MSBuildProjectName.EndsWith('.Windows'))">true</TM_IsWindows>
+        <TM_IsWindows Condition="'$(TM_IsWindows)' != 'true' AND $(MSBuildProjectName.EndsWith('.TestCli'))">true</TM_IsWindows>
+    </PropertyGroup>
+
+    <!-- Windows-only projects -->
+    <PropertyGroup Condition="'$(TM_IsWindows)' == 'true'">
         <TargetFramework>net10.0-windows10.0.19041.0</TargetFramework>
+    </PropertyGroup>
+
+    <!-- MAUI projects -->
+    <PropertyGroup Condition="'$(TM_IsMaui)' == 'true'">
+        <TargetFrameworks>net10.0-android;net10.0-ios;net10.0-maccatalyst;net10.0-windows10.0.19041.0</TargetFrameworks>
+        <UseMaui>true</UseMaui>
+        <SingleProject>true</SingleProject>
+    </PropertyGroup>
+
+    <PropertyGroup>
         <NoWarn>$(NoWarn);CA1416</NoWarn>
     </PropertyGroup>
 
@@ -8,9 +35,12 @@
         <PackageTags>bluetooth;ble;ftms;heartrate</PackageTags>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
-        <Version>0.1.0</Version>
+        <Version>0.2.0</Version>
         <PackageReleaseNotes>
-            Initial release
+            - Shared abstract base classes (AdvertisementInfoBase, DeviceScannerBase) for cross-platform reuse.
+            - Static Parse() methods on FTMS data classes (TreadmillData, IndoorBikeData, CrossTrainerData, RowerData, StepClimberData, StairClimberData).
+            - HeartRateMeasurementParser for shared heart rate data parsing.
+            - MAUI platform support via Plugin.BLE.
         </PackageReleaseNotes>
     </PropertyGroup>
 </Project>

@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <PackageId>ThinkMeta.Devices.Bluetooth.Fitness.Windows</PackageId>
+
+        <Title>Bluetooth fitness device library (Windows)</Title>
+        <Description>Windows-specific classes for scanning and using Bluetooth fitness devices.</Description>
+        <PackageReleaseNotes>FTMS data handlers now delegate to shared static Parse() methods.</PackageReleaseNotes>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="$(SolutionDir)README.md" Pack="true" PackagePath="\" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\ThinkMeta.Devices.Bluetooth.Core.Windows\ThinkMeta.Devices.Bluetooth.Core.Windows.csproj" />
+        <ProjectReference Include="..\..\Shared\ThinkMeta.Devices.Bluetooth.Fitness\ThinkMeta.Devices.Bluetooth.Fitness.csproj" />
+    </ItemGroup>
+</Project>

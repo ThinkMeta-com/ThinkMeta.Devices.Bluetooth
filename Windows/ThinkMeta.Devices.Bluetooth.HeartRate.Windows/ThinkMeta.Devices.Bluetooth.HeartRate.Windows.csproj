@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <PackageId>ThinkMeta.Devices.Bluetooth.HeartRate.Windows</PackageId>
+
+        <Title>Bluetooth heart rate monitor library (Windows)</Title>
+        <Description>Windows-specific classes for scanning and using Bluetooth heart rate monitors.</Description>
+        <PackageReleaseNotes>Heart rate parsing now delegates to shared HeartRateMeasurementParser.</PackageReleaseNotes>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="$(SolutionDir)README.md" Pack="true" PackagePath="\" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\ThinkMeta.Devices.Bluetooth.Core.Windows\ThinkMeta.Devices.Bluetooth.Core.Windows.csproj" />
+        <ProjectReference Include="..\..\Shared\ThinkMeta.Devices.Bluetooth.HeartRate\ThinkMeta.Devices.Bluetooth.HeartRate.csproj" />
+    </ItemGroup>
+</Project>

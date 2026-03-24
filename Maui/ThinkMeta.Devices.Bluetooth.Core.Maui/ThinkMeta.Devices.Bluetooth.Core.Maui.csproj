@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <PackageId>ThinkMeta.Devices.Bluetooth.Core.Maui</PackageId>
+
+        <Title>Bluetooth core library (MAUI)</Title>
+        <Description>Core classes for scanning and using Bluetooth fitness devices (MAUI).</Description>
+        <PackageReleaseNotes>DeviceScanner now inherits from shared DeviceScannerBase; AdvertisementInfo now inherits from shared AdvertisementInfoBase.</PackageReleaseNotes>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="$(SolutionDir)README.md" Pack="true" PackagePath="\" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\Shared\ThinkMeta.Devices.Bluetooth.Core\ThinkMeta.Devices.Bluetooth.Core.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Plugin.BLE" />
+    </ItemGroup>
+</Project>

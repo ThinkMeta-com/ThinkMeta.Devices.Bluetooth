@@ -3,6 +3,7 @@
     <File Path="LICENSE" />
     <File Path="README.md" />
     <File Path="SolutionFiles/ThinkMeta.Devices.Bluetooth.Net.props" />
+    <File Path="SolutionFiles/ThinkMeta.Devices.Bluetooth.Net.targets" />
   </Folder>
   <Folder Name="/ThinkMeta.SolutionFiles/">
     <File Path="ThinkMeta.SolutionFiles/.clang-format" />
@@ -23,9 +24,21 @@
     <File Path="ThinkMeta.SolutionFiles/ThinkMeta.Net.Build.targets" />
     <File Path="ThinkMeta.SolutionFiles/ThinkMeta.Packages.props" />
   </Folder>
-  <Project Path="ThinkMeta.Devices.Bluetooth.Core/ThinkMeta.Devices.Bluetooth.Core.csproj" Id="e7d4259d-a54a-43f1-963a-19ce61be41d9" />
-  <Project Path="ThinkMeta.Devices.Bluetooth.Fitness.TestCli/ThinkMeta.Devices.Bluetooth.Fitness.TestCli.csproj" Id="a7061759-38ba-4a37-85ae-cb783e7cd501" />
-  <Project Path="ThinkMeta.Devices.Bluetooth.Fitness/ThinkMeta.Devices.Bluetooth.Fitness.csproj" Id="82bd5f96-1a08-4f3f-a8c0-f2cb3ce34d27" />
-  <Project Path="ThinkMeta.Devices.Bluetooth.HeartRate.TestCli/ThinkMeta.Devices.Bluetooth.HeartRate.TestCli.csproj" Id="d778227c-366c-4496-a92a-f4e8fcc3828b" />
-  <Project Path="ThinkMeta.Devices.Bluetooth.HeartRate/ThinkMeta.Devices.Bluetooth.HeartRate.csproj" />
+  <Folder Name="/Shared/">
+    <Project Path="Shared/ThinkMeta.Devices.Bluetooth.Core/ThinkMeta.Devices.Bluetooth.Core.csproj" />
+    <Project Path="Shared/ThinkMeta.Devices.Bluetooth.HeartRate/ThinkMeta.Devices.Bluetooth.HeartRate.csproj" />
+    <Project Path="Shared/ThinkMeta.Devices.Bluetooth.Fitness/ThinkMeta.Devices.Bluetooth.Fitness.csproj" />
+  </Folder>
+  <Folder Name="/Windows/">
+    <Project Path="Windows/ThinkMeta.Devices.Bluetooth.Core.Windows/ThinkMeta.Devices.Bluetooth.Core.Windows.csproj" />
+    <Project Path="Windows/ThinkMeta.Devices.Bluetooth.HeartRate.Windows/ThinkMeta.Devices.Bluetooth.HeartRate.Windows.csproj" />
+    <Project Path="Windows/ThinkMeta.Devices.Bluetooth.Fitness.Windows/ThinkMeta.Devices.Bluetooth.Fitness.Windows.csproj" />
+    <Project Path="Windows/ThinkMeta.Devices.Bluetooth.HeartRate.TestCli/ThinkMeta.Devices.Bluetooth.HeartRate.TestCli.csproj" />
+    <Project Path="Windows/ThinkMeta.Devices.Bluetooth.Fitness.TestCli/ThinkMeta.Devices.Bluetooth.Fitness.TestCli.csproj" />
+  </Folder>
+  <Folder Name="/Maui/">
+    <Project Path="Maui/ThinkMeta.Devices.Bluetooth.Core.Maui/ThinkMeta.Devices.Bluetooth.Core.Maui.csproj" />
+    <Project Path="Maui/ThinkMeta.Devices.Bluetooth.HeartRate.Maui/ThinkMeta.Devices.Bluetooth.HeartRate.Maui.csproj" />
+    <Project Path="Maui/ThinkMeta.Devices.Bluetooth.Fitness.Maui/ThinkMeta.Devices.Bluetooth.Fitness.Maui.csproj" />
+  </Folder>
 </Solution>

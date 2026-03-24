@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <PackageId>ThinkMeta.Devices.Bluetooth.Fitness.Maui</PackageId>
+
+        <Title>Bluetooth fitness device library (MAUI)</Title>
+        <Description>Classes for scanning and using Bluetooth fitness devices (MAUI).</Description>
+        <PackageReleaseNotes>FTMS data handlers now delegate to shared static Parse() methods.</PackageReleaseNotes>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="$(SolutionDir)README.md" Pack="true" PackagePath="\" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\ThinkMeta.Devices.Bluetooth.Core.Maui\ThinkMeta.Devices.Bluetooth.Core.Maui.csproj" />
+        <ProjectReference Include="..\..\Shared\ThinkMeta.Devices.Bluetooth.Fitness\ThinkMeta.Devices.Bluetooth.Fitness.csproj" />
+    </ItemGroup>
+</Project>
